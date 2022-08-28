@@ -2,9 +2,9 @@
 {% load static %}
 {% block content %}
 <br>
-<form method="post" class="Complaint mt-5">
+<form method="post" class=" mt-5">
 	{% csrf_token %}
-	<div class="module">
+	<div class="module mt-5">
 		<p class="inside"><i class="fa-solid fa-user-doctor-hair"></i>DOCTOR'S MODULE</p>
 	</div>
 	<div class="doc">
@@ -38,26 +38,31 @@
 	</div>
 	<div class="doc">
 		<div>
-			<h4 class="true"> PATIENT COMPLAINT</h4>
+			<h4 class="true w-75"> PATIENT COMPLAINT</h4>
 			{{form.patientComplain}}
 		</div>
 	</div>
 	<div class="doc">
 		<div>
-			<h4 class="true"> DOCTOR'S NOTE</h4>
+			<h4 class="true w-75"> DOCTOR'S NOTE</h4>
 			{{form.doctorNote}}
 		</div>
 	</div>
-	<div class="doc">
-		<p>You are to head to the Laboratory page or to Pharmacy page</p>
+	<div class="doc" style="color: white;">
+		<h4>You are to head to the Laboratory page or to Pharmacy page</h4>
 	</div>
 	<div class="suggestion">
 		<!-- <input type="text" placeholder="suggested lab test">
         <input type="text" placeholder="recommended drug list"> -->
-		<p>suggest lab test</p>
+		<div style="color: white;">
+		<h5>suggest lab test</h5><br>
 		{{form.suggested_lab_test}}
-		<p>suggest drug test</p>
+	</div>
+	<div style="color: white;">
+		<h5>suggest drug test</h5><br>
+
 		{{form.suggested_drug_test}}
+	</div>
 
 	</div>
 	<span class="suggestion">

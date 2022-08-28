@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 from .forms import *
 from .models import *
 # Create your views here.
+import random
 
 
 def allComplaints(request):
@@ -19,10 +20,15 @@ def frontDesk(request, slug):
     
 
     if request.method == "POST":
-        print('ww')
+        
         nurseOnFile = request.POST.get("nurseOnFile")
         docOnFile = request.POST.get("docOnFile")
-        patient.update(docOnDuty = docOnFile, nurseOnDuty = nurseOnFile)
+        
+        # patient.update(docOnDuty = docOnFile, nurseOnDuty = nurseOnFile)
+        patient.docOnDuty = docOnFile
+        patient.nurseOnDuty = nurseOnFile
+        patient.save()
+        
         return redirect('complaint', slug = patient.regNumber)
     
     
@@ -50,7 +56,7 @@ def registration(request):
         if registerForm.is_valid():
 
             obj=registerForm.save(commit=False)
-            obj.regNumber=f'{obj.firstName}210'
+            obj.regNumber=random.randint(234567, 99239999999)
             
             obj.save()
             registerForm = RegisterForm

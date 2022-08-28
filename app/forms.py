@@ -27,6 +27,7 @@ class RegisterForm(ModelForm):
         self.fields['email'].widget.attrs['class'] = 'form-control form-control-email'
         self.fields['email'].widget.attrs['placeholder'] = 'Enter your Email'
 
+    
 
 class ComplainForm(ModelForm):
     class Meta:
@@ -46,6 +47,10 @@ class DocForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(DocForm, self).__init__(*args, **kwargs)
+        self.fields['patientComplain'].widget.attrs['class'] = 'form-control form-control-user w-75'
+        self.fields['doctorNote'].widget.attrs['class'] = 'form-control form-control-user w-75'
+        self.fields['suggested_lab_test'].widget.attrs['class'] = 'p-3'
+        self.fields['suggested_drug_test'].widget.attrs['class'] = 'p-3'
 
 
 class LabItemsForm(ModelForm):
