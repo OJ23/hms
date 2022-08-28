@@ -1,0 +1,31 @@
+{% extends 'components/main.html' %}
+{% load static %}
+{% block content %}
+    <div class="Complaint">
+        <div class="module">
+            <p class="inside"><i class="fal fa-hands-usd"></i> BILLING MODULE</p>
+        </div>
+   
+        <div class="card mx-auto" style="width: 19rem;">
+            <img src="{% static 'assets/images/logo.svg' %}" class="card-img-top" alt="">
+            <div class="card-body">
+              <h5 class="card-title"> HMI FEE:-</h5>
+              <p class="card-text"> A total cost of the services received during the time of stay.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Doctor Consultancy Fee :- <span class="stable">{{consultancyFee}}</li></span>
+              <li class="list-group-item">Laboratory Fee :- <span class="stable">{{labTotal}}</li></span>
+              <li class="list-group-item">Pharmacy Fee :- <span class="stable">{{pharmacyTotal}}</li></span>
+              <li class="list-group-item"> Total Cost   :- <span class="stable">{{total}}</li></span>
+            </ul>
+            <div class="card-body">
+              <a href="{% url 'index' %}" class="card-link"> <-Back to home page</a>
+            </div>
+           
+        </div>
+        <div>
+          <button btn btn-lg>PRINT</button>
+        </div>
+    </div>
+
+{% endblock %}    

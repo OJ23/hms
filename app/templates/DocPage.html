@@ -1,0 +1,69 @@
+{% extends 'components/main.html' %}
+{% load static %}
+{% block content %}
+<br>
+<form method="post" class="Complaint mt-5">
+	{% csrf_token %}
+	<div class="module">
+		<p class="inside"><i class="fa-solid fa-user-doctor-hair"></i>DOCTOR'S MODULE</p>
+	</div>
+	<div class="doc">
+		<div class="card" style="width: 27rem;">
+			<div class="card-header">
+				PROFILE:
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">Name:<span class="stable"><input name="name" value="{{patient.firstName}} {{patient.middleName}} {{patient.lastName}}" type="text" disabled /></span></li>
+				<li class="list-group-item">Registration Number:<span class="stable"><input name="regNumber" value="{{patient.regNumber}}" type="text" disabled></span></li>
+				<li class="list-group-item">Doctor on File:<span class="stable"><input disabled value="{{complain.doctorName}}" type="text"></span></li>
+				<li class="list-group-item">Nurse on File:<span class="stable"><input name="nurse" value="{{complain.nurse}}" type="text" disabled></span></li>
+				<li class="list-group-item">Gender:<span class="stable"><input name="gender" value="{{patient.gender}}" type="text" disabled></span></li>
+				<li class="list-group-item">Date-Of-Birth: <span class="stable"><input name="dateOfBirth" value="{{patient.dateOfBirth}}" disabled type="text"></span></li>
+
+			</ul>
+		</div>
+	</div>
+	<div class="doc">
+		<div class="card" style="width: 27rem;">
+			<div class="card-header">
+				VITAL SIGNS:
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">Height(m):<span class="stable"><input value="{{complain.height}}" type="text" disabled></span></li>
+				<li class="list-group-item">Weight(kg):<span class="stable"><input value="{{complain.weight}}" type="text" disabled></span></li>
+				<li class="list-group-item">Temperature(^C):<span class="stable"><input value="{{complain.temperature}}" type="text" disabled></span></li>
+				<li class="list-group-item">Blood Pressure(mmHg):<span class="stable"><input value="{{complain.bloodPressure}}" type="text" disabled></span></li>
+			</ul>
+		</div>
+	</div>
+	<div class="doc">
+		<div>
+			<h4 class="true"> PATIENT COMPLAINT</h4>
+			{{form.patientComplain}}
+		</div>
+	</div>
+	<div class="doc">
+		<div>
+			<h4 class="true"> DOCTOR'S NOTE</h4>
+			{{form.doctorNote}}
+		</div>
+	</div>
+	<div class="doc">
+		<p>You are to head to the Laboratory page or to Pharmacy page</p>
+	</div>
+	<div class="suggestion">
+		<!-- <input type="text" placeholder="suggested lab test">
+        <input type="text" placeholder="recommended drug list"> -->
+		<p>suggest lab test</p>
+		{{form.suggested_lab_test}}
+		<p>suggest drug test</p>
+		{{form.suggested_drug_test}}
+
+	</div>
+	<span class="suggestion">
+                <button type="submit" name="lab" value="lab" class="btn btn-info">Laboratory</button>
+                <button type="submit" name="pharmacy" value="pharmacy" class="btn btn-info">Pharmacy</button>
+            </span>
+</form>
+
+{% endblock %}

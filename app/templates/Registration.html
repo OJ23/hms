@@ -1,0 +1,150 @@
+<html>
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,600&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+	<title>Registration Form</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/registration.css' %}">
+</head>
+<body>
+	<div class="container">
+		<div class="module">
+            <p class="inside"><i class="fa-solid fa-id-card"></i>REGISTRATION MODULE</p>
+        </div>
+		<form method="post">
+			{% csrf_token %}
+			<div class="form first">
+				<div class="details">
+					<span class="title2">Personal Details:</span><p>All fields marked with * are required</p>
+					<div class="fields">
+						<div class="input-field">
+							<label><p class="size">First Name*</p></label>
+							{{RegisterForm.firstName}}
+<!--							<input type="text" placeholder="Enter your First Name" required>-->
+						</div>
+						<div class="input-field">
+							<label><p class="size">Middle Name</p></label>
+							{{RegisterForm.middleName}}
+<!--							<input type="text" placeholder="Enter your Middle Name" required>-->
+						</div>
+						<div class="input-field">
+							<label><p class="size">Last Name*</p></label>
+							{{RegisterForm.lastName}}
+<!--							<input type="text" placeholder="Enter your Last Name" required>-->
+						</div>
+						<div class="input-field">
+							<label><p class="size">Date of Birth*</p></label>
+							{{RegisterForm.dateOfBirth}}
+<!--							<input type="date" placeholder="Enter your date of birth" required>-->
+						</div>
+						<div class="input-field">
+							 <p class="size">Blood Group</p>
+							{{RegisterForm.bloodGroup}}
+<!--						 <select>-->
+<!--						 	<option>A+</option>-->
+<!--						 	<option>A-</option>-->
+<!--						 	<option>B+</option>-->
+<!--						 	<option>B-</option>-->
+<!--						 	<option>AB+</option>-->
+<!--						 	<option>AB-</option>-->
+<!--						 	<option>O+</option>-->
+<!--						 	<option>O-</option>-->
+<!--						 </select>-->
+						</div>
+						<div class="input-field">
+							 <p class="size">Genotype</p>
+							{{RegisterForm.genoType}}
+<!--						 <select>-->
+<!--						 	<option>AA</option>-->
+<!--						 	<option>AS</option>-->
+<!--						 	<option>SS</option>-->
+<!--						 	<option>AC</option>-->
+<!--						 </select>-->
+						</div>
+						<div class="input-field">
+							<label><p class="size">Phone Number*</p></label>
+							{{RegisterForm.phoneNumber}}
+<!--							<input type="number" placeholder="Enter your phone number" required>-->
+						</div>
+						<div class="input-field">
+							<label><p class="size">Email*</p></label>
+							{{RegisterForm.email}}
+<!--							<input type="email" placeholder="Enter your Email" required>-->
+						</div>
+						<div class="input-field">
+						 <p class="size">Gender*</p>
+							{{RegisterForm.gender}}
+<!--						 <select>-->
+<!--						 	<option>Male</option>-->
+<!--						 	<option>Female</option>-->
+<!--						 </select>-->
+						</div>
+					</div>
+				</div>
+				<div class="details">
+					<span class="title2">Next of Kin Details:</span>
+					<div class="fields">
+						<div class="input-field">
+							<label><p class="size">Full Name*</p></label>
+							{{RegisterForm.nextOfKinFullName}}
+<!--							<input type="text" placeholder="Enter their Full Name" required>-->
+						</div>
+						<div class="input-field">
+							<label><p class="size">Phone Number*</p></label>
+							{{RegisterForm.nextOfKinPhoneNumber}}
+<!--							<input type="Number" placeholder="Enter their phone number" required>-->
+						</div>
+						<div class="input-field">
+							<label><p class="size">Email*</p></label>
+							{{RegisterForm.nextOfKinEmail}}
+<!--							<input type="email" placeholder="Enter their Email" required>-->
+						</div>
+					</div>
+				</div>
+				<div class="details">
+					<span class="title2"> For Front Desk:</span>
+					<div class="fields">
+						<div class="input-field">
+							<p class="size">Pls Select A Nurse On Duty:</p>
+							<select class="chase">
+								<option value="">None</option>
+								<option value="">Nurse Hannah</option>
+								<option value="">Nurse Yinka</option>
+								<option value="">Nurse Chiamaka</option>
+								<option value="">Nurse Zainab</option>
+							</select>
+						</div>
+						<div class="input-field">
+							<p class="size">Pls Select A Doctor On Duty:</p>
+							<select class="chase">
+								<option value="">None</option>
+								<option value="">Doctor Ben</option>
+								<option value="">Doctor Olamide</option>
+								<option value="">Doctor ChukwuEbuka</option>
+								<option value="">Doctor Rabiu</option>
+							</select>
+						</div>
+						<div></div>
+					</div>
+				</div>
+				<!-- <div class="button">
+					<button class="btn btn-success btn-lg">
+						<a href="nurse.html">TO NURSE</a>
+					</button>
+				</div> -->
+				<div class="button">
+					<button  name="register" type="submit" class="btn btn-success btn-lg">TO COMPLAINT PAGE</button>
+				</div>
+			</div>
+
+		</form>
+
+	</div>
+</body>
+</html>

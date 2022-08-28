@@ -1,0 +1,86 @@
+{% extends 'components/main.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    <!-- Hero -->
+<section>
+    <div class="hero container-fluid d-flex justify-content-around align-items-center p-3">
+        <div class="hero-left">
+            <h1>We don’t just treat symptoms, we solve <span class="text-light">health problems.</span></h1>
+            <p class="text-light">HMS CLINICS</p>
+        </div>
+        <div class="hero-right card">
+            <P class="border-bottom text-success" style="font-size: 1.2rem;">SELECT A SERVICE</P>
+            <ul>
+                <a href="DocPage.html"><li class="border-bottom"><i class="fas-fa-search"></i> RUN A  - <span class="fw-bold"> LAB TEST NOW</span></li></a>
+                <a href="DocPage.html"><li class="border-bottom"><i class="fas-fa-search"></i> OTC - <span class="fw-bold">DRUGS?</span></li></a>
+                <li class="border-bottom"><i class="fas-fa-search"></i> COVID-19 Service</li>
+            </ul>
+            <form method="post">
+                {% csrf_token %}
+                <div class="d-flex justify-content-center">
+                    <input name="regNumber" placeholder="Enter reg number" />
+                </div>
+
+                <button type="submit" class="btn btn-success">BOOK APPOINTMENT</button>
+            </form>
+
+        </div>
+    </div>
+</section>
+
+<div class="push">
+    <div class="ad3 gap-x-4">
+        <div class="joggle">
+            <div class="forced">
+                <div class="colorrr rounded-4">
+                    <div class="child rounded-4">
+                        <h2> Problems with booking an appointment?</h2>
+                        <ul>
+                            <li>-Create your Profile</li>
+                            <li>-Select the complaint section on the navigation bar</li>
+                            <li>-Give your details to front desk</li>
+                            <li>-Please take a seat and you'll be attended to shortly</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="colorrr rounded-4">
+                    <div class="child rounded-4">
+                        <div class="third">
+                            <h1> <a href="Registration.html">Want to Register?</a></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="colorrr rounded-4">
+                    <div class="child rounded-4">
+                        <h2> Problems with getting your receipt?</h2>
+                        <ul>
+                            <li>-After Encounter with front desk</li>
+                            <li>-Head to front desk when called upon</li>
+                            <li>-Select the print option</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ad4">
+    <div class="underline">
+        <p class="truee">The main purpose of our system is to make hospital task easy and to develop software that can replace the manual hospital system that we have at the moment.</p>
+        <h3> SCOPE </h3>
+        <ul>
+            <li>-Online appointment for patients</li>
+            <li>-Manage Doctor Account</li>
+            <li>-Manage Patient Account</li>
+            <li>-Create and Manage Appointments of patients</li>
+            <li>-Reliable Covid Information</li>
+        </ul>
+    </div>
+</div>
+
+
+{% endblock %}

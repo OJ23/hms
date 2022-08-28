@@ -1,0 +1,66 @@
+{% extends 'components/main.html' %}
+{% load static %}
+{% block content %}
+
+<div  class="Complaint">
+    <div class="module">
+        <p class="inside"><i class="fas fa-user-nurse"> </i></i> NURSE MODULE</p>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+        <div class="doc">
+            <div class="card" style="width: 27rem;">
+                <div class="card-header">
+                    PROFILE:
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Name:<span class="stable"><input name="name" value="{{patient.firstName}} {{patient.middleName}} {{patient.lastName}}" type="text" disabled /></span></li>
+                    <li class="list-group-item">Registration Number:<span class="stable"><input name="regNumber" value="{{patient.regNumber}}" type="text" disabled></span></li>
+                    <li class="list-group-item">Doctor on File:<span class="stable">{{form.doctorName}}</span></li>
+                    <li class="list-group-item">Nurse on File:<span class="stable">{{form.nurse}}</span></li>
+                    <li class="list-group-item">Gender:<span class="stable"><input name="gender" value="{{patient.gender}}" type="text" disabled></span></li>
+                    <li class="list-group-item">Date-Of-Birth: <span class="stable"><input name="dateOfBirth" value="{{patient.dateOfBirth}}" disabled type="text"></span></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="middle">
+            <h4 class="false">Personal Info:</h4>
+            <div class="d-grid gap-3">
+                <div class="p-2 bg-light border">
+                    <div class="form-group">
+                        <label for="height"> Height in (m): </label>
+                        {{form.height}}
+                    </div>
+                </div>
+                <div class="p-2 bg-light border">
+                    <div class="form-group">
+                        <label for="weight">Weight in (kg): </label>
+                        {{form.weight}}
+                    </div>
+                </div>
+                <div class="p-2 bg-light border">
+                    <div class="form-group">
+                        <label for="temp">Temperature in (celcius): </label>
+                        {{form.temperature}}
+                    </div>
+                </div>
+                <div class="p-2 bg-light border">
+                    <div class="form-group">
+                        <label for="bp">Blood Pressure in (mmHg): </label>
+                        {{form.bloodPressure}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="submit">
+            <button type="submit"  class="btn btn-success btn-lg">
+               CONTINUE
+            </button>
+        </div>
+    </form>
+
+</div>
+
+
+    {% endblock content %}
