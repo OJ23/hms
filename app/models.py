@@ -23,6 +23,18 @@ class Patient(models.Model):
         ('SS', 'SS'),
         ('AC', 'AC')
     )
+    NURSE_CHOICES = (
+        ('Nurse Hannah', 'Nurse Hannah'),
+        ('Nurse Yinka', 'Nurse Yinka'),
+        ('Nurse Zainab', 'Nurse Zainab'),
+        ('Nurse Betty', 'Nurse Betty')
+    )
+    DOC_CHOICES = (
+        ('Doc Ben', 'Doc Ben'),
+        ('Doc Mike', 'Doc Mike'),
+        ('Doc Seun', 'Doc Seun'),
+        ('Doc Peter', 'Doc Peter')
+    )
 
 
     firstName = models.CharField(max_length=200)
@@ -51,6 +63,17 @@ class Patient(models.Model):
     nextOfKinFullName = models.CharField(max_length=300)
     nextOfKinPhoneNumber = models.CharField(max_length=11)
     nextOfKinEmail = models.EmailField()
+    docOnDuty = models.CharField(
+        'Genotype',
+        max_length=30,
+        choices=DOC_CHOICES,
+        default='Doc Ben')
+    nurseOnDuty = models.CharField(
+        'Genotype',
+        max_length=39,
+        choices=NURSE_CHOICES,
+        default='Nurse Hannah')    
+
 
     def __str__(self):
         return self.firstName
@@ -71,12 +94,12 @@ class Complaint(models.Model):
     #     choices=DOCTOR_CHOICES,
     #     default= 'General Consultant'
     # )
-    nurse = models.CharField(max_length=200)
+    # nurse = models.CharField(max_length=200)
     height = models.IntegerField()
     weight = models.IntegerField()
     temperature = models.IntegerField()
     bloodPressure = models.IntegerField()
-    doctorName = models.CharField(max_length=200, null=True, blank=True)
+    # doctorName = models.CharField(max_length=200, null=True, blank=True)
 
 
 

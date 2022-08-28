@@ -8,12 +8,36 @@ from .models import *
 # Create your views here.
 
 
+def allComplaints(request):
+    complaints = Complaint.objects.all()
+    context ={"complaints": complaints}
+    return render(request, 'allComplains.html', context)
+
+
+def frontDesk(request, slug):
+    patient = Patient.objects.get(regNumber = slug)
+    
+
+    if request.method == "POST":
+        print('ww')
+        nurseOnFile = request.POST.get("nurseOnFile")
+        docOnFile = request.POST.get("docOnFile")
+        patient.update(docOnDuty = docOnFile, nurseOnDuty = nurseOnFile)
+        return redirect('complaint', slug = patient.regNumber)
+    
+    
+
+    context = {'patient': patient,}
+    return render(request, 'frontDesk.html', context)
+
+
+
 def index(request):
     if request.method == "POST":
         if request.POST.get("regNumber"):
             regNumber = request.POST.get("regNumber")
             patient = Patient.objects.get(regNumber = regNumber)
-            return redirect('complaint', slug = patient.regNumber)
+            return redirect('frontDesk', slug = patient.regNumber)
     context = {}
     return render(request, 'index.html', context)
 

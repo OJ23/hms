@@ -1,0 +1,38 @@
+{% extends 'components/main.html' %}
+{% load static %}
+{% block content %}
+
+<section class="mt-3"> 
+    <h1>All complaints</h1>
+    <div class="card bg-light p-2" style="color: black;">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Reg Number</th>
+                <th scope="col">First</th>
+                <th scope="col">Middle</th>
+                <th scope="col">Last</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for complain in complaints %}
+              <tr>
+                <th scope="row">{{complain.patient.regNumber}}</th>
+                <td>{{complain.patient}}</td>
+                <td>{{complain.patient.middleName}}</td>
+                <td>{{complain.patient.lastName}}</td>
+                <td>{{complain.patient.email}}</td>
+                <td>{{complain.patient.phoneNumber}}</td>
+              </tr>
+              {% endfor %}
+              
+            </tbody>
+          </table>
+
+    </div>
+    
+</section>
+
+{% endblock %}

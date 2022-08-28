@@ -1,0 +1,71 @@
+{% extends 'components/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<section>
+    <div class="card bg-light p-3" style="color: black; font-size: 20px;">
+        <p>Name: {{patient.firstName}}</p>
+        <p>Middle Name: {{patient.middleName}} Nmae</p>
+        <p>Last Name : {{patient.lastName}}</p>
+        <p>Phone Number : {{patient.phoneNumber}}</p>
+        <p>Email : {{patient.email}}</p>
+        <p>Next of Kin Name : {{patient.nextOfKinFullName}}</p>
+        <p>Next of Kin Email : {{patient.nextOfKinEmail}}</p>
+        <p>Next of Kin Phone Number : {{patient.nextOfKinPhoneNumber}}</p>
+
+    </div>
+    <form></form>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">First Name:<span class="stable"><input name="name" value="{{patient.firstName}} {{patient.middleName}} {{patient.lastName}}" type="text" disabled /></span></li>
+        <li class="list-group-item">Registration Number:<span class="stable"><input name="regNumber" value="{{patient.regNumber}}" type="text" disabled></span></li>
+        
+        
+        <li class="list-group-item">Gender:<span class="stable"><input name="gender" value="{{patient.gender}}" type="text" disabled></span></li>
+        <li class="list-group-item">Date-Of-Birth: <span class="stable"><input name="dateOfBirth" value="{{patient.dateOfBirth}}" disabled type="text"></span></li>
+
+    </ul>
+
+    <div class="details">
+        <span class="h3" style="color:white"> For Front Desk:</span>
+        <form method="post">
+            {% csrf_token %}
+            <div class="input">
+                <p class="size">Pls Select A Dpctor On Duty:</p>
+                <select>
+                    <option value="Doc Ben">Doc Ben</option>
+                    <option value="Doc Mike">Doc Mike</option>
+                    <option value="Doc Suen">Doc Seun</option>
+                    <option value="Doc Peter">Doc Peter</option>
+                </select>
+
+            </div>
+
+            <div class="input">
+                <p class="size">Pls Select A Dpctor On Duty:</p>
+                <select>
+                    <option value="Doc Hannah">Doc Hannh</option>
+                    <option value="Doc Yinka">Doc Yinka</option>
+                    <option value="Doc Zainab">Doc Zainab</option>
+                    <option value="Doc Betty">Doc Betty</option>
+                </select>
+
+            </div>
+            <button type="submit">submit</button>
+
+        </form>
+        <div class="fields">
+            <div class="input-field">
+                <p class="size">Pls Select A Nurse On Duty:</p>
+                {{RegisterForm.nurseOnDuty}}
+            </div>
+            <div class="input-field">
+                <p class="size">Pls Select A Doctor On Duty:</p>
+                {{RegisterForm.docOnDuty}}
+            </div>
+            <div></div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

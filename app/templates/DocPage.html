@@ -15,8 +15,8 @@
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item">Name:<span class="stable"><input name="name" value="{{patient.firstName}} {{patient.middleName}} {{patient.lastName}}" type="text" disabled /></span></li>
 				<li class="list-group-item">Registration Number:<span class="stable"><input name="regNumber" value="{{patient.regNumber}}" type="text" disabled></span></li>
-				<li class="list-group-item">Doctor on File:<span class="stable"><input disabled value="{{complain.doctorName}}" type="text"></span></li>
-				<li class="list-group-item">Nurse on File:<span class="stable"><input name="nurse" value="{{complain.nurse}}" type="text" disabled></span></li>
+				<li class="list-group-item">Doctor on file:<span class="stable"><input name="docOnDuty" value="{{patient.docOnDuty}}" type="text" disabled></span></li>
+                    <li class="list-group-item">Nurse on file Number:<span class="stable"><input name="nurseOnDuty" value="{{patient.nurseOnDuty}}" type="text" disabled></span></li>
 				<li class="list-group-item">Gender:<span class="stable"><input name="gender" value="{{patient.gender}}" type="text" disabled></span></li>
 				<li class="list-group-item">Date-Of-Birth: <span class="stable"><input name="dateOfBirth" value="{{patient.dateOfBirth}}" disabled type="text"></span></li>
 

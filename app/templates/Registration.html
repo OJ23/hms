@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,600&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 	<title>Registration Form</title>
+	<link rel="stylesheet" href="{% static '/bootstrap.min.css' %}"" />
   <link rel="stylesheet" type="text/css" href="{% static 'assets/css/registration.css' %}">
 </head>
 <body>
@@ -112,23 +113,11 @@
 					<div class="fields">
 						<div class="input-field">
 							<p class="size">Pls Select A Nurse On Duty:</p>
-							<select class="chase">
-								<option value="">None</option>
-								<option value="">Nurse Hannah</option>
-								<option value="">Nurse Yinka</option>
-								<option value="">Nurse Chiamaka</option>
-								<option value="">Nurse Zainab</option>
-							</select>
+							{{RegisterForm.nurseOnDuty}}
 						</div>
 						<div class="input-field">
 							<p class="size">Pls Select A Doctor On Duty:</p>
-							<select class="chase">
-								<option value="">None</option>
-								<option value="">Doctor Ben</option>
-								<option value="">Doctor Olamide</option>
-								<option value="">Doctor ChukwuEbuka</option>
-								<option value="">Doctor Rabiu</option>
-							</select>
+							{{RegisterForm.docOnDuty}}
 						</div>
 						<div></div>
 					</div>
@@ -138,12 +127,14 @@
 						<a href="nurse.html">TO NURSE</a>
 					</button>
 				</div> -->
-				<div class="button">
+				<div class="button d-flex gap-2">
 					<button  name="register" type="submit" class="btn btn-success btn-lg">TO COMPLAINT PAGE</button>
+					
 				</div>
 			</div>
 
 		</form>
+		<a  style="color: green;" href="{% url 'index' %}">TO HOME PAGE</a>
 
 	</div>
 </body>

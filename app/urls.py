@@ -3,6 +3,9 @@ from .views import *
 
 urlpatterns = [
     path('', index, name = 'index'),
+    path('complaint/', allComplaints, name = 'allcomplaints'),
+    path('front-desk/<slug:slug>/', frontDesk, name = 'frontDesk'),
+
     path('complaint/<slug:slug>/', complaints, name = 'complaint'),
     path('register/', registration, name = 'register'),
     path('complain//<slug:slug>/doctor/', doctor, name = 'doctor'),
