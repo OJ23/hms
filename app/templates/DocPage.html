@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <br>
-<form method="post" class=" mt-5">
+<form method="post" class=" mt-5 container p-2 bg-light">
 	{% csrf_token %}
 	<div class="module mt-5">
 		<p class="inside"><i class="fa-solid fa-user-doctor-hair"></i>DOCTOR'S MODULE</p>
@@ -48,17 +48,17 @@
 			{{form.doctorNote}}
 		</div>
 	</div>
-	<div class="doc" style="color: white;">
+	<div class="doc" >
 		<h4>You are to head to the Laboratory page or to Pharmacy page</h4>
 	</div>
 	<div class="suggestion">
 		<!-- <input type="text" placeholder="suggested lab test">
         <input type="text" placeholder="recommended drug list"> -->
-		<div style="color: white;">
+		<div >
 		<h5>suggest lab test</h5><br>
 		{{form.suggested_lab_test}}
 	</div>
-	<div style="color: white;">
+	<div >
 		<h5>suggest drug test</h5><br>
 
 		{{form.suggested_drug_test}}

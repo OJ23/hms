@@ -22,14 +22,14 @@
         </div>
     </div>
     <div class="doc">
-        <h4 class="true"> DOCTOR'S SUGGESTION:</h4>
-        <textarea disabled name="" id="" cols="95" rows="7" class="">{{doctor.suggested_lab_test}}</textarea>
+        <h4 class="true" style="width: 90%;"> DOCTOR'S SUGGESTION:</h4>
+        <textarea style="width: 90%;" disabled name="" id="" cols="95" rows="7" class="">{{doctor.suggested_lab_test}}</textarea>
     </div>
     <div class="doc">
-        <h4 class="true">LIST:</h4>
+        <h4 class="true text-center" style="width: 90%;">LIST:</h4>
         
-        <table class="table table-light">
-            <thead class="table-primary">
+        <table class="table  " style="width: 100%;">
+            <thead class="">
             <tr>
                 <th>S/N</th>
                 <th>Tests Run</th>
@@ -51,7 +51,7 @@
                     <td></td>
                     <td>{{form.test_run}}</td>
                     <td>{{form.amount}}</td>
-                    <td><input value="add" type="submit"></td>
+                    <td><input class="btn btn-success" value="add" type="submit"></td>
                     </form>
                 </tr>
             
