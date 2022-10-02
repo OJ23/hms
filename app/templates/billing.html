@@ -1,15 +1,17 @@
 {% extends 'components/main.html' %}
 {% load static %}
 {% block content %}
-    <div class="Complaint">
+    <div class="Complaint ">
         <div class="module">
             <p class="inside"><i class="fal fa-hands-usd"></i> BILLING MODULE</p>
         </div>
    
-        <div class="card mx-auto" style="width: 19rem;">
+        <div  class="card mx-auto mt-2" style="width: 19rem;">
             <img src="{% static 'assets/images/logo.svg' %}" class="card-img-top" alt="">
+            <div id="reciept">
             <div class="card-body">
               <h5 class="card-title"> HMI FEE:-</h5>
+              <h6>Patient: {{regnumber}}</h6>
               <p class="card-text"> A total cost of the services received during the time of stay.</p>
             </div>
             <ul class="list-group list-group-flush">
@@ -18,14 +20,17 @@
               <li class="list-group-item">Pharmacy Fee :- <span class="stable">{{pharmacyTotal}}</li></span>
               <li class="list-group-item"> Total Cost   :- <span class="stable">{{total}}</li></span>
             </ul>
+          </div>
+            <div onclick="printReciept()">
+              <button >PRINT</button>
+            </div>
             <div class="card-body">
               <a href="{% url 'index' %}" class="card-link"> <-Back to home page</a>
             </div>
+
            
         </div>
-        <div>
-          <button btn btn-lg>PRINT</button>
-        </div>
+        
     </div>
 
 {% endblock %}    

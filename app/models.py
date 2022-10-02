@@ -98,7 +98,7 @@ class Complaint(models.Model):
     height = models.IntegerField()
     weight = models.IntegerField()
     temperature = models.IntegerField()
-    bloodPressure = models.IntegerField()
+    bloodPressure = models.CharField(max_length=100)
     # doctorName = models.CharField(max_length=200, null=True, blank=True)
 
 

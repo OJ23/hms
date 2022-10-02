@@ -16,6 +16,7 @@
                 <th scope="col">Phone Number</th>
                 <th scope="col">Doctor</th>
                 <th scope="col">Nurse</th>
+                <th scope="col">Reciept</th>
               </tr>
             </thead>
             <tbody>
@@ -29,6 +30,7 @@
                 <td>{{complain.patient.phoneNumber}}</td>
                 <td>{{complain.patient.docOnDuty}}</td>
                 <td>{{complain.patient.nurseOnDuty}}</td>
+                <td><a href="{% url 'billing' complain.id %}" class="btn bg-success text-light">View</a></td>
               </tr>
               {% endfor %}
               

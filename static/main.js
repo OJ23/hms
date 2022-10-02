@@ -6,3 +6,10 @@ function totalCost(e) {
     console.log(form_values)
 
 }
+
+function printReciept(){
+    console.log('ddd')
+    var printwin = window.open("");
+    printwin.document.write(document.getElementById("reciept").innerHTML);
+    printwin.print();
+}

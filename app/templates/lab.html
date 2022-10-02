@@ -6,7 +6,7 @@
     <div class="module">
         <p class="inside"><i class="fas fa-vials"> </i> LABORATORY MODULE</p>
     </div>
-    <div class="doc">
+    <div class="doc p-3">
         <div class="card" style="width: 27rem;">
             <div class="card-header">
                 PROFILE:
@@ -21,19 +21,20 @@
             </ul>
         </div>
     </div>
-    <div class="doc">
-        <h4 class="true" style="width: 90%;"> DOCTOR'S SUGGESTION:</h4>
-        <textarea style="width: 90%;" disabled name="" id="" cols="95" rows="7" class="">{{doctor.suggested_lab_test}}</textarea>
+    <div class="p-4 ">
+    <div class=" w-100">
+        <h4 class="true w-100"> DOCTOR'S SUGGESTION:</h4>
+        <textarea disabled class="w-100">{{doctor.suggested_lab_test}}</textarea>
     </div>
-    <div class="doc">
-        <h4 class="true text-center" style="width: 90%;">LIST:</h4>
+    <div class="w-100">
+        <h4 class="true text-center w-100">LIST:</h4>
         
-        <table class="table  " style="width: 100%;">
+        <table class="table w-100 ">
             <thead class="">
             <tr>
                 <th>S/N</th>
                 <th>Tests Run</th>
-                <th>Amount</th>
+                <th>Amount(&#8358;)</th>
             </tr>
             </thead>
             <tbody>
@@ -73,6 +74,7 @@
                     <button class="btn btn-danger"><a class="text-light" href="{% url 'doctor' slug=complain.id %}">BACK</a></button>
                 </span>
     </div>
+</div>
 </div>
 
 {% endblock %}

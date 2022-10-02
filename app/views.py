@@ -187,6 +187,8 @@ def billing(request, slug):
     labTotal = 0
     pharmacyTotal = 0
     complain = Complaint.objects.get(id=slug)
+    regnumber = complain.patient.regNumber
+    
     lab = Lab.objects.filter(complaint = complain.id).first()
     if lab is not None:
         lab_tests = LabItems.objects.filter(lab = lab)
@@ -199,8 +201,10 @@ def billing(request, slug):
         for item in pharmacyItems:
             pharmacyTotal += item.amount
     
-    total = pharmacyTotal + labTotal + consultancyFee    
+    total = pharmacyTotal + labTotal + consultancyFee  
+    
+      
      
-    context = {'labTotal': labTotal, 'total': total, 'pharmacyTotal': pharmacyTotal, 'consultancyFee': consultancyFee}
+    context = {'labTotal': labTotal, 'total': total, 'pharmacyTotal': pharmacyTotal, 'consultancyFee': consultancyFee, 'regnumber': regnumber}
     
     return render(request, 'billing.html', context)
